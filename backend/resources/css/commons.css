@@ -1,0 +1,29 @@
+.filter-options {
+    border: 1px solid #0b62b9b6;
+    border-radius: 8px;
+    box-shadow: rgb(131, 131, 131) 2px 2px 8px;
+    padding : 1rem;
+}
+
+.card {
+    box-shadow: rgb(131, 131, 131) 2px 2px 8px;
+    border-color: #0b62b9b6;
+}
+
+aside {
+    background-color: lightgray;
+    align-items: center;
+    padding: 0px;
+    padding-top: 1rem;
+    height: 100vh;
+}
+
+aside li a {
+    text-decoration: none;
+    color: black;
+    height: 1rem;
+}
+
+aside li a:hover {
+    color: white;
+}
