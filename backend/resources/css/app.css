@@ -1,73 +1,71 @@
 @import 'tailwindcss';
-
 @import './bootstrap';
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+/* NOTE: Removed non-standard "@source" at-rules which cause linter/build warnings.
+   If you intended to list template/source files for a build tool (eg. for purge/content),
+   declare them in your build configuration (tailwind.config.js, Vite config, mix, etc.)
+   Example (tailwind.config.js):
+     module.exports = { content: ['./resources/**/*.blade.php', './resources/**/*.js'] }
+*/
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+/* validación visual inputs */
 input:invalid, input:invalid:required {
   border: 2px dashed rgb(199, 17, 17);
 }
-
 input:valid {
   border: 2px solid rgb(87, 245, 67);
 }
 
+/* tarjetas y filtros */
 .filter-options {
     border: 1px solid #0b62b9b6;
     border-radius: 8px;
     box-shadow: rgb(131, 131, 131) 2px 2px 8px;
     padding : 1rem;
 }
-
 .card {
     box-shadow: rgb(131, 131, 131) 2px 2px 8px;
     border-color: #0b62b9b6;
 }
 
+/* sidebar */
 aside {
-    background-color: lightgray;
+    background-color: #f5f5f5;
     align-items: center;
     padding: 0px;
     padding-top: 1rem;
     height: 100vh;
 }
-
 aside li a {
     text-decoration: none;
     color: black;
     height: 1rem;
+    display: block;
+    padding: .4rem .6rem;
 }
-
 aside li a:hover {
     color: white;
+    background-color: #0b62b9b6;
+    border-radius: 4px;
 }
 
-/* Estilos para el listado de localidades en la vista de boletería */
-.localidades-list table {
-    border-collapse: collapse;
+/* tablas */
+.table {
     width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
 }
-.localidades-list th, .localidades-list td {
-    padding: 0.4rem;
+.table th, .table td {
+    padding: .5rem;
     vertical-align: middle;
-    font-size: 0.9rem;
-}
-.localidades-list .btn {
-    padding: 0.25rem 0.4rem;
-    font-size: 0.8rem;
 }
 
-/* Apariencia para selects deshabilitados (cuando event viene por query param) */
-select[disabled] {
-    background-color: #e9ecef;
-    opacity: 1;
-    cursor: not-allowed;
+/* pequeños ajustes responsivos */
+@media (max-width: 767px) {
+    aside { display: none; }
 }
